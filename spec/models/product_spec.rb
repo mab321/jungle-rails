@@ -7,9 +7,8 @@ RSpec.describe Product, type: :model do
       it 'Test product name is nil' do
         @category= Category.new(name: 'Furniture')
         @product = Product.new(name: nil, price: 150, quantity: 4, category: @category)
-
         @product.save 
-        
+  
         expect(@product.errors.full_messages).to include("Name can't be blank")
       end
 
